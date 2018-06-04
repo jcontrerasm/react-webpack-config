@@ -1,5 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export const App = ({ name }) => (
-  <div>{name}</div>
-); 
+export class App extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return(
+      <div>{this.props.name}</div>
+    );
+  }
+}
