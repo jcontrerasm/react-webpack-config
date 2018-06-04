@@ -1,5 +1,5 @@
 {
-  "name": "react-webpack",
+  "name": "react-webpack-config",
   "version": "1.0.0",
   "description": "Configuración de Webpack con entorno de React",
   "main": "/public/app.js",
