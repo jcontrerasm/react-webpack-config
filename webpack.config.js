@@ -6,7 +6,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.tsx', '.json', '.css', '.scss'],
     alias: {
-      '@app': path.resolve(__dirname, 'src/App')
+      '@app': path.resolve(__dirname)
     }
   },
   cache: true,
@@ -14,7 +14,7 @@ module.exports = {
     'react-hot-loader/patch', // Activa Hot Module Reloading HMR para React
     'webpack-dev-server/client?http://localhost:9000',
     'webpack/hot/only-dev-server',
-    './src/index.jsx'
+    './src/index.tsx'
   ],
   output: {
     path: endPath,
@@ -24,7 +24,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|tsx)$/,
+        test: /\.tsx?$/,
+        use: "awesome-typescript-loader"
+      },
+      {
+        test: /\.(js|jsx)$/,
         exclude: '/node_modules/',
         use: 'babel-loader'
       },
